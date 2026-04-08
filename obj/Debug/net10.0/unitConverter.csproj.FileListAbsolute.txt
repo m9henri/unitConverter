@@ -1,0 +1,14 @@
+/home/Henri/Dokumente/projects/cs/unitConverter/bin/Debug/net10.0/unitConverter
+/home/Henri/Dokumente/projects/cs/unitConverter/bin/Debug/net10.0/unitConverter.deps.json
+/home/Henri/Dokumente/projects/cs/unitConverter/bin/Debug/net10.0/unitConverter.runtimeconfig.json
+/home/Henri/Dokumente/projects/cs/unitConverter/bin/Debug/net10.0/unitConverter.dll
+/home/Henri/Dokumente/projects/cs/unitConverter/bin/Debug/net10.0/unitConverter.pdb
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.GeneratedMSBuildEditorConfig.editorconfig
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.AssemblyInfoInputs.cache
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.AssemblyInfo.cs
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.csproj.CoreCompileInputs.cache
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.dll
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/refint/unitConverter.dll
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.pdb
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.genruntimeconfig.cache
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/ref/unitConverter.dll
