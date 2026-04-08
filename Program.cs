@@ -34,7 +34,7 @@ class Program
                 Length.Intro();
                 break;
             default:
-                Console.WriteLine("Fuck you and microslop for making the compiler inside vscode for c# proprietary and not making it work on linux"); // some pent up anger
+                // Console.WriteLine("Fuck you and microslop for making the compiler inside vscode for c# proprietary and not making it work on linux"); // some pent up anger
                 Environment.Exit(80085);
                 break;
         }
