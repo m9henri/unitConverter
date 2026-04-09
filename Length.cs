@@ -39,14 +39,14 @@ class Length {
             Global.Amount = Convert.ToSingle(Console.ReadLine());
         }
 
-        Converter(Global.Unit1, Global.Unit2, Global.Amount);
+        Global.Result = Converter(Global.Unit1, Global.Unit2, Global.Amount);
 
         if (Global.Amount == 1)
         {
-            Console.Write($"\n\n{Global.Amount} {Global.Unit1} is {Global.Result} {Global.Unit2}");
+            Console.Write($"\n\n{Global.Amount} {Global.Unit1} is {String.Format("{0:0.00}", Global.Result)} {Global.Unit2}");
         } else
         {
-            Console.Write($"\n\n{Global.Amount} {Global.Unit1} are {Global.Result} {Global.Unit2}");
+            Console.Write($"\n\n{Global.Amount} {Global.Unit1} are {String.Format("{0:0.00}", Global.Result)} {Global.Unit2}");
         }
 
         Console.Write("\n\nPress any key to close the program. . . ");

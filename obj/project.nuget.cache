@@ -1,13 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fMabsellHDE=",
+  "dgSpecHash": "uVR/oe/Axro=",
   "success": true,
   "projectFilePath": "/home/Henri/Dokumente/projects/cs/unitConverter/unitConverter.csproj",
   "expectedPackageFiles": [
-    "/home/Henri/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/10.0.4/microsoft.netcore.app.runtime.linux-x64.10.0.4.nupkg.sha512",
-    "/home/Henri/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512",
-    "/home/Henri/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/10.0.4/microsoft.aspnetcore.app.runtime.linux-x64.10.0.4.nupkg.sha512",
-    "/home/Henri/.nuget/packages/microsoft.netcore.app.host.linux-x64/10.0.4/microsoft.netcore.app.host.linux-x64.10.0.4.nupkg.sha512"
+    "/home/Henri/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
   ],
   "logs": []
 }

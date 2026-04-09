@@ -12,3 +12,4 @@
 /home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.pdb
 /home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.genruntimeconfig.cache
 /home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/ref/unitConverter.dll
+/home/Henri/Dokumente/projects/cs/unitConverter/obj/Debug/net10.0/unitConverter.sourcelink.json
