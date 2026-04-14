@@ -44,7 +44,7 @@ class Time
             Global.Amount = Convert.ToSingle(Console.ReadLine());
         }
 
-        Converter(Global.Unit1, Global.Unit2, Global.Amount, includeMonth, includeYear);
+        Global.Result = Converter(Global.Unit1, Global.Unit2, Global.Amount, includeMonth, includeYear);
 
         if (Global.Amount == 1)
         {
