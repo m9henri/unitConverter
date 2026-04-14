@@ -12,7 +12,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string[] units = ["Length", "Mass (still unsupported)", "Time (still unsupported)"];
+        string[] units = ["Length", "Mass (still unsupported)", "Time"];
         string input;
 
         Console.WriteLine("What unit class do you want to convert in?\n");
@@ -32,6 +32,9 @@ class Program
         {
             case "1":
                 Length.Intro();
+                break;
+            case "3":
+                Time.Intro();
                 break;
             default:
                 // Console.WriteLine("Fuck you and microslop for making the compiler inside vscode for c# proprietary and not making it work on linux"); // some pent up anger
