@@ -5,8 +5,6 @@ class Time
     public static void Intro()
     {
         PublicVar Global = new();
-        bool includeMonth = false;
-        bool includeYear = false;
 
         // Output
         Console.Clear();
@@ -17,7 +15,9 @@ class Time
             "mn - minutes\n" +
             "hr - hours\n" +
             "d  - days\n" +
-            "wk - weeks\n\n" +
+            "wk - weeks\n" +
+            "mo - month (30 days)\n" +
+            "yr - year (365,25 days)\n\n" +
             ">> "
         );
 
@@ -31,10 +31,6 @@ class Time
         Global.Unit2 = Console.ReadLine();
         if (String.IsNullOrEmpty(Global.Unit2)) { Environment.Exit(1); }
 
-        // special rules for time
-        if (Global.Unit1 == "mo" || Global.Unit2 == "mo") { includeMonth = true; }
-        if (Global.Unit1 == "yr" || Global.Unit2 == "yr") { includeYear = true; }
-
         Console.Write($"How many {Global.Unit1} do you wanna convert?\n\n>> ");
         Global.Amount = Convert.ToSingle(Console.ReadLine()); // not checking this like the other, maybe in future update
 
@@ -44,7 +40,7 @@ class Time
             Global.Amount = Convert.ToSingle(Console.ReadLine());
         }
 
-        Global.Result = Converter(Global.Unit1, Global.Unit2, Global.Amount, includeMonth, includeYear);
+        Global.Result = Converter(Global.Unit1, Global.Unit2, Global.Amount);
 
         if (Global.Amount == 1)
         {
@@ -58,47 +54,63 @@ class Time
         Console.ReadKey();
     }
 
-    static double Converter(string unit1, string unit2, float amount, bool includeMonth, bool includeYear)
+    static double Converter(string unit1, string unit2, float amount) => (unit1, unit2) switch
     {
-        double modifier = 0;
-        // if block for month and year
-        
-        modifier = (unit1, unit2) switch
-        {
-            ("ms", "s") => 0.001,
-            ("ms", "mn") => 0.00001666667,
-            ("ms", "hr") => 0.0000002777778,
-            ("ms", "d") => 0.000000011574074074074074074,
-            ("ms", "wk") => 0.000000001653439534395343953439534395,
-            ("s", "ms") => 1000,
-            ("s", "mn") => 0.01666667,
-            ("s", "hr") => 0.0002777778,
-            ("s", "d") => 0.000011574074074074074074,
-            ("s", "wk") => 0.000001653439534395343953439534395,
-            ("mn", "ms") => 60000,
-            ("mn", "s") => 60,
-            ("mn", "hr") => 0.01666667,
-            ("mn", "d") => 0.00069444444,
-            ("mn", "wk") => 0.000099206349206349206349206349206349,
-            ("hr", "ms") => 3600000,
-            ("hr", "s") => 3600,
-            ("hr", "mn") => 60,
-            ("hr", "d") => 0.041666667,
-            ("hr", "wk") => 0.0059523809523809525238095252380952523809525,
-            ("d", "ms") => 86400000,
-            ("d", "s") => 86400,
-            ("d", "mn") => 1440,
-            ("d", "hr") => 24,
-            ("d", "wk") => 0.1428571428571428571428571428571,
-            ("wk", "ms") => 604800000,
-            ("wk", "s") => 604800,
-            ("wk", "mn") => 10080,
-            ("wk", "hr") => 168,
-            ("wk", "d") => 7
-        };
-        
-        // failsafe
-        if (modifier == 0) { Environment.Exit(1); }
-        return amount * modifier;
-    }
+        ("ms", "s") => amount * 0.001,
+        ("ms", "mn") => amount * 0.00001666667,
+        ("ms", "hr") => amount * 0.0000002777778,
+        ("ms", "d") => amount * 0.000000011574074074074074074,
+        ("ms", "wk") => amount * 0.000000001653439534395343953439534395,
+        ("ms", "mo") => amount * 0.0000000003858024691358025,
+        ("ms", "yr") => amount * 0.00000000003168808781402895,
+        ("s", "ms") => amount * 1000,
+        ("s", "mn") => amount * 0.01666667,
+        ("s", "hr") => amount * 0.0002777778,
+        ("s", "d") => amount * 0.000011574074074074074074,
+        ("s", "wk") => amount * 0.000001653439534395343953439534395,
+        ("s", "mo") => amount * 0.0000003858024691358025,
+        ("s", "yr") => amount * 0.00000003168808781402895,
+        ("mn", "ms") => amount * 60000,
+        ("mn", "s") => amount * 60,
+        ("mn", "hr") => amount * 0.01666667,
+        ("mn", "d") => amount * 0.00069444444,
+        ("mn", "wk") => amount * 0.000099206349206349206349206349206349,
+        ("mn", "mo") => amount * 0.000023148148,
+        ("mn", "yr") => amount * 0.000001901285256673511,
+        ("hr", "ms") => amount * 3600000,
+        ("hr", "s") => amount * 3600,
+        ("hr", "mn") => amount * 60,
+        ("hr", "d") => amount * 0.041666667,
+        ("hr", "wk") => amount * 0.0059523809523809525238095252380952523809525,
+        ("hr", "mo") => amount * 0.0013888889,
+        ("hr", "yr") => amount * 0.0001140771170431211,
+        ("d", "ms") => amount * 86400000,
+        ("d", "s") => amount * 86400,
+        ("d", "mn") => amount * 1440,
+        ("d", "hr") => amount * 24,
+        ("d", "wk") => amount * 0.1428571428571428571428571428571,
+        ("d", "mo") => amount * 0.03333333333333333,
+        ("d", "yr") => amount * 0.002737850787132101,
+        ("wk", "ms") => amount * 604800000,
+        ("wk", "s") => amount * 604800,
+        ("wk", "mn") => amount * 10080,
+        ("wk", "hr") => amount * 168,
+        ("wk", "d") => amount * 7,
+        ("wk", "mo") => amount * 0.2333333333333333,
+        ("wk", "yr") => amount * 0.01916495550992471,
+        ("mo", "ms") => amount * 2592000000,
+        ("mo", "s") => amount * 2592000,
+        ("mo", "mn") => amount * 43200,
+        ("mo", "hr") => amount * 720,
+        ("mo", "d") => amount * 30,
+        ("mo", "wk") => amount * 4.285714285714286,
+        ("mo", "yr") => amount * 0.08213552361396304,
+        ("yr", "ms") => amount * 31557600000,
+        ("yr", "s") => amount * 31557600,
+        ("yr", "mn") => amount * 525960,
+        ("yr", "hr") => amount * 8766,
+        ("yr", "d") => amount * 365.25,
+        ("yr", "wk") => amount * 52.17857142857143,
+        ("yr", "mo") => amount * 12
+    };
 }
